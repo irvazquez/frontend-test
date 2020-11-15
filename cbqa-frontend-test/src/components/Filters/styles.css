@@ -1,0 +1,28 @@
+.filters {
+  display: flex;
+  align-items: center;
+  margin: auto;
+  width: 100%;
+  max-width: 1000px;
+  justify-content: flex-end;
+}
+
+.filter-button {
+  background: #fff;
+  padding: 15px 30px;
+  cursor: pointer;
+  border: 1px solid rgba(153, 110, 81, 0.1);
+  border-bottom: 5px solid rgba(153, 110, 81, 0.1);
+
+}
+
+.filter-button:hover {
+  background: rgba(0,0,0,0.1);
+}
+
+.filter-button.active {
+  border-bottom: 5px solid #996E51;
+  color: #996E51;
+  font-weight: 500;
+  background: rgba(255, 255, 255, 0.4);
+}

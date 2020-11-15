@@ -1,26 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useReducer } from 'react'
+import { GetTodos } from './helper/API';
+import { SortTodos } from './helper/SortTodos';
+import { todoReducer } from './todoReducer';
+import TodoContext from './TodoContext';
+import { Tabs } from './components/Tabs/Tabs';
 
-function App() {
+const init = async () => {
+  const data = GetTodos();
+  return data;
+}
+
+const App = () => {
+  const [todos, dispatch] = useReducer(todoReducer, {});
+  useEffect(() => {
+    init().then(res => {
+      const sortTodos = SortTodos(res);
+      dispatch({
+        type: 'init',
+        payload: sortTodos
+      });
+    });
+  }, [])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <TodoContext.Provider value={{ todos, dispatch }}>
+      {todos !== {} && (
+        <Tabs />
+      )}
+    </TodoContext.Provider>
+  )
 }
 
 export default App;

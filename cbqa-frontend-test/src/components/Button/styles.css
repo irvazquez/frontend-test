@@ -1,0 +1,13 @@
+.btn {
+  padding: 8px 20px;
+  border-radius: 5px;
+  border: solid 1px #e0e0e0;
+  box-shadow: none;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.btn-danger {
+  background: #F54B45;
+  color: #fff;
+}

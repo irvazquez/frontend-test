@@ -1,0 +1,90 @@
+.tabs {
+  width: 100%;
+  height: 100%;
+  max-width: 1000px;
+  background: #fff;
+  color: #5E5E5E;
+  margin: auto;
+}
+
+.tabs-nav {
+  float: left;
+  width: 30%;
+  min-width: 100px;
+  height: 100%;
+  background: #fff;
+  overflow: hidden;
+}
+
+.tab-button {
+  display: block;
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+  border-radius: 0;
+  padding: 35px 20px;
+  font-weight: 500;
+  color: #9F9F9F;
+  background: #C7C7C7;
+  border: solid 1px #BBB;
+}
+
+.tab-button:focus {
+  outline-color: #fff;
+}
+
+.tab-button:hover {
+  transform: scale(1.02, 1.02);
+  border-left: 6px solid #996E51;
+  box-shadow: 0 0 15px #555;
+}
+
+.tab-button.active {
+  border: none;
+  background: #fff;
+  border-left: 10px solid #996E51;
+  transform: scale(1.02, 1.02);
+  box-shadow: 0 0 10px #333;
+  color: #996E51;
+  font-weight: 500;
+}
+
+.tab-body {
+  display: none;
+  float: left;
+  width: 70%;
+  background: #fff;
+  padding: 15px;
+}
+
+.tab-body.active {
+  display: initial;
+}
+
+.list-item {
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 15px;
+  cursor: pointer;
+  border-bottom: solid 1px #BBB;
+}
+
+.list-item-show {
+  display: flex;
+}
+
+.list-item:hover {
+  border-radius: 5px;
+  background: rgba(39, 39, 39, 0.1);
+}
+
+.list-item.completed {
+  border-radius: 5px;
+  background: #ADFFC0;
+}
+
+.list-item.completed:hover {
+  border-radius: 5px;
+  background: rgb(150, 224, 168);
+}
