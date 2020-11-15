@@ -19,6 +19,7 @@ export const Tabs = () => {
         <div className="tabs-nav">
           {Object.entries(todos).map(([key]) => (
             <div
+              key={key}
               className={`tab-button ${activeTab === key ? 'active' : ''}`}
               onClick={() => handleTab(key)}
             >
@@ -27,9 +28,11 @@ export const Tabs = () => {
           ))}
         </div>
         {Object.entries(todos).map(([key, value]) => (
-          <div className={`tab-body ${key === activeTab ? 'active' : ''}`}>
+          <div
+            key={key}
+            className={`tab-body ${key === activeTab ? 'active' : ''}`}
+          >
             <Tab
-              key={key}
               content={value}
               userId={key}
               filter={filter}
